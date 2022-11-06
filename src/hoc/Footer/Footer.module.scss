@@ -1,0 +1,41 @@
+@import '../../scss/2.colors';
+@import '../../scss/4.fontSize';
+
+.Footer {
+    min-height: 10vh;
+    background-color: getColor(color-black);
+    font-size: getFontSize(xxs);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    color: getColor(color_nav);
+
+    &_Title {
+        font-size: getFontSize(xxs);
+    }
+
+    &_Links {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        place-items: center;
+
+        list-style-type: none;
+
+        &>li>a {
+            text-decoration: none;
+            color: getColor(color_nav);
+            font-weight: bold;
+        }
+    }
+}
+
+// MEDIA QUERIES
+@media (max-width:767px) {
+    .Footer {
+        grid-template-columns: 1fr 2fr;
+
+        &_Links {
+            place-items: center start;
+        }
+    }
+}

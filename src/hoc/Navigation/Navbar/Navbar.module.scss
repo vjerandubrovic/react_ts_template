@@ -1,0 +1,70 @@
+@import '../../../scss/2.colors';
+@import '../../../scss/4.fontSize';
+
+.Navbar {
+
+    padding: 1vmax 1.5vmax;
+    list-style-type: none;
+    background-color: getColor(color-black);
+
+    display: grid;
+    // place-content: center flex-start;
+    grid-template-columns: repeat(7, max-content) 1fr;
+
+    gap: 1vmax;
+    font-size: getFontSize(s);
+
+    animation: modal 0.2s forwards linear;
+
+    &>li>a {
+        text-decoration: none;
+        color: getColor(color_nav);
+        font-weight: bold;
+    }
+
+    &>li:last-of-type {
+        grid-column: 8 / 9;
+        place-self: center end;
+        margin-right: 5vmax;
+    }
+}
+
+// ANIMATION
+@keyframes modal {
+    0% {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+
+    50% {}
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+// MEDIA QUERIES
+@media (max-width:766px) {
+    .Navbar {
+        display: flex;
+        font-size: getFontSize(m);
+        flex-direction: column;
+        place-items: center;
+
+        &>li {
+            padding: 1vmax;
+        }
+
+        &>li:last-of-type {
+            place-self: initial;
+            margin-right: 0;
+        }
+    }
+
+    .Navbar_Check:checked~ul {
+        transform: scaleY(1);
+        opacity: 1;
+        height: 100%;
+    }
+}

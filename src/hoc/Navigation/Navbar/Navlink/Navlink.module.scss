@@ -1,0 +1,44 @@
+@import '../../../../scss/2.colors';
+
+.Link {
+    color: getColor(color_nav);
+}
+
+.Active {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 10%;
+        top: 1.6vmax;
+        right: -0.4vmax;
+        left: -0.4vmax;
+        background-color: getColor(color_nav);
+
+        animation: active_link 7s infinite linear;
+    }
+}
+
+@keyframes active_link {
+    0% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+// MEDIA QUERIES
+@media (max-width:767px) {
+    .Active {
+        &::after {
+            top: 3vmax;
+        }
+    }
+}

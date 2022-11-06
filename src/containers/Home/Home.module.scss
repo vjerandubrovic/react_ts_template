@@ -1,0 +1,91 @@
+@import '../../scss/2.colors';
+@import '../../scss//4.fontSize';
+@import '../../scss/5.image';
+
+.Home {
+    padding: 1vmax;
+    background-color: getColor(color_background);
+    font-size: getFontSize(xs);
+    height: 100vh;
+
+    h2 {
+        text-align: center;
+    }
+
+    &_Intro {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5vmax;
+        color: getColor(color_text);
+
+        &_One {
+            display: grid;
+            place-items: center;
+
+        }
+
+        &_Two {
+            display: grid;
+            place-items: center;
+            gap: 1vmax;
+
+            &_Image {
+                display: grid;
+                box-shadow: 1px 1px 5px 5px getColor(color_nav);
+
+                & img {
+                    @extend %image;
+                }
+            }
+        }
+
+        &_Three {
+            display: grid;
+            place-items: center;
+            gap: 1vmax;
+
+            &_Image {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1vmax;
+
+                & img {
+                    box-shadow: 1px 1px 5px 5px getColor(color_nav);
+                    @extend %image;
+                }
+            }
+
+            &_Image_One {
+                display: grid;
+                box-shadow: 1px 1px 5px 5px getColor(color_nav);
+
+                & img {
+                    @extend %image;
+                }
+            }
+        }
+    }
+}
+
+//  MEDIA QUERIES
+@media (max-width:767px) {
+    .Home {
+        font-size: getFontSize(m);
+
+        &_Intro {
+            &_One {
+                gap: 1vmax;
+            }
+
+            &_Two {
+                ul {
+                    padding: 0 3vmax;
+                }
+            }
+
+            &_Three {
+                padding: 0 3vmax;
+            }
+        }
+    }
+}

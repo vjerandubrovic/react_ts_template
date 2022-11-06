@@ -1,0 +1,26 @@
+@import './scss/1.reset';
+@import './scss/3.backgroundImages';
+@import './scss/6.animations';
+
+body {
+  margin: 0;
+  font-family: 'Kanit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @extend %bg_image_two;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.route-wrapper {
+  position: relative;
+}
+
+.route-wrapper>div {
+  position: absolute;
+  width: 100%;
+}

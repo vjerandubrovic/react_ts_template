@@ -1,0 +1,67 @@
+@import '../../../../scss/2.colors';
+
+.Navbutton_Burger {
+    position: fixed;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30%;
+    z-index: 2;
+    right: 1vmax;
+    top: 0.2vmax;
+    height: calc(2rem + 2vmax);
+    width: calc(2rem + 2vmax);
+
+    &_Line {
+        position: relative;
+        top: 0;
+        right: 0;
+        background-color: getColor(color_nav);
+        transition: all 0.2s linear;
+        border: 1px solid #000;
+        box-shadow: 2px 2px getColor(color_nav);
+    }
+}
+
+.Navbutton_Check {
+    position: fixed;
+    z-index: 3;
+    right: 1vmax;
+    top: 0.2vmax;
+    opacity: 0;
+    height: calc(2rem + 2vmax);
+    width: calc(2rem + 2vmax);
+}
+
+.Navbutton_Check:checked+.Navbutton_Burger .Navbutton_Burger_Line {
+    &:nth-child(1) {
+        transform: rotateZ(45deg);
+        top: calc(1rem + 0.5vmax);
+    }
+
+    &:nth-child(2) {
+        opacity: 0;
+    }
+
+    &:nth-child(3) {
+        transform: rotateZ(135deg);
+        top: calc(-1rem - 1.1vmax);
+    }
+}
+
+@media (max-width:375px) {
+    .Navbutton_Check:checked+.Navbutton_Burger .Navbutton_Burger_Line {
+        &:nth-child(1) {
+            transform: rotateZ(45deg);
+            top: calc(1rem + 0.5vmax);
+        }
+
+        &:nth-child(2) {
+            opacity: 0;
+        }
+
+        &:nth-child(3) {
+            transform: rotateZ(135deg);
+            top: calc(-1rem - 0.9vmax);
+        }
+    }
+}

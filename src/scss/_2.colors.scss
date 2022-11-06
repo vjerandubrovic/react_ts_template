@@ -1,0 +1,26 @@
+// COLORS
+$colors:('color-one': #122666,
+    'color-two': #ffffffb9,
+    'color-three': #636060,
+    'color_nav': #26ffa1,
+    'color_background': hsla(55, 1%, 1%, 0.5),
+    'color_title': #cbff2e,
+    'color_text': #fff317,
+    'color-inputs': #18ff80,
+    'color-kcal': #18ff80,
+    'color-protein': #2eddff,
+    'color-carbs': #fd2dfa,
+    'color-fat': #f0bdef,
+    'color-modal': #272727,
+    'color-add': #33ee2c,
+    'color-remove': #ff2b2b,
+    'color-save': #f0bdef,
+    'color-white': #fff,
+    'color-black': #000,
+);
+
+@function getColor($color) {
+    @return map-get($colors, $color);
+}
+
+;

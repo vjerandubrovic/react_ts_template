@@ -1,0 +1,12 @@
+// FONTSIZES
+$sizes:('xxxs': calc(1rem + 0.1vmax),
+    'xxs': calc(1rem + 0.3vmax),
+    'xs': calc(1rem + 0.5vmax),
+    's': calc(1rem + 0.7vmax),
+    'm': calc(1rem + 0.9vmax),
+    'l': calc(1rem + 1.1vmax),
+);
+
+@function getFontSize($size) {
+    @return map-get($sizes, $size);
+}

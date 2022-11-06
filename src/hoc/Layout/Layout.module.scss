@@ -1,0 +1,16 @@
+.Layout {
+    margin: 0 auto;
+    margin-top: calc(2rem + 2vmax);
+    max-width: 80vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+// MEDIA QUERIES
+@media (max-width:767px) {
+    .Layout {
+        margin-top: 0;
+        padding-top: 0vmax;
+        max-width: 100vw;
+    }
+}
